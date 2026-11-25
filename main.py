@@ -36,7 +36,8 @@ def main() -> None:
         with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
             f.write(line)
     except OSError as exc:
-        raise SystemExit(f"failed to write {OUTPUT_PATH}: {exc}") from exc
+        print(f"failed to write {OUTPUT_PATH}: {exc}")
+        pass
 
     with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
         written = f.read()
